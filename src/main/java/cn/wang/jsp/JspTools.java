@@ -1,4 +1,4 @@
-package org.wang.jsp;
+package cn.wang.jsp;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -11,7 +11,8 @@ import java.util.Set;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
-import org.wang.common.ClassTools;
+
+import cn.wang.common.ClassTools;
 
 
 /**

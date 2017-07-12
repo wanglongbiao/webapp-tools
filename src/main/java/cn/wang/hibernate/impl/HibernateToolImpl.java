@@ -1,4 +1,4 @@
-package org.wang.hibernate.impl;
+package cn.wang.hibernate.impl;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -6,9 +6,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Properties;
 
-import org.wang.common.DatabaseUtil;
-import org.wang.common.NameTools;
-import org.wang.hibernate.HibernateTool;
+import cn.wang.common.DatabaseUtil;
+import cn.wang.common.NameTools;
+import cn.wang.hibernate.HibernateTool;
 
 public class HibernateToolImpl implements HibernateTool {
 

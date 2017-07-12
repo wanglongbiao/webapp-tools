@@ -1,4 +1,4 @@
-package org.wang.sql;
+package cn.wang.sql;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

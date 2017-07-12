@@ -1,4 +1,4 @@
-package org.wang.common;
+package cn.wang.common;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

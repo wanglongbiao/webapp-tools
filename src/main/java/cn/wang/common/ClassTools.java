@@ -1,4 +1,4 @@
-package org.wang.common;
+package cn.wang.common;
 
 import java.io.BufferedReader;
 import java.io.File;

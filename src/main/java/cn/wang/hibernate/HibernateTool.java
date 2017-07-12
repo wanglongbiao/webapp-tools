@@ -1,4 +1,4 @@
-package org.wang.hibernate;
+package cn.wang.hibernate;
 
 public interface HibernateTool {
 

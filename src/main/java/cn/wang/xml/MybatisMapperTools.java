@@ -1,4 +1,4 @@
-package org.wang.xml;
+package cn.wang.xml;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -14,10 +14,11 @@ import org.jdom2.Element;
 import org.jdom2.filter.ElementFilter;
 import org.jdom2.filter.Filter;
 import org.jdom2.input.SAXBuilder;
-import org.wang.common.ClassTools;
-import org.wang.common.Constants;
-import org.wang.common.NameTools;
 import org.xml.sax.InputSource;
+
+import cn.wang.common.ClassTools;
+import cn.wang.common.Constants;
+import cn.wang.common.NameTools;
 
 /**
  * @author: wanglongbiao

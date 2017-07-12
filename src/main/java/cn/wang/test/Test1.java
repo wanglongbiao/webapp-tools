@@ -1,6 +1,6 @@
-package org.wang.test;
+package cn.wang.test;
 
-import org.wang.common.NameTools;
+import cn.wang.common.NameTools;
 
 /**
  * @author: wanglongbiao

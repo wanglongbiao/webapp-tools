@@ -1,4 +1,4 @@
-package org.wang.sql;
+package cn.wang.sql;
 
 import java.util.LinkedHashMap;
 import java.util.Map;

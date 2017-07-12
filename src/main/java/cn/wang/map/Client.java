@@ -1,10 +1,10 @@
-package org.wang.map;
+package cn.wang.map;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import org.wang.common.DatabaseUtil;
-import org.wang.map.utils.CRSConvertor;
+import cn.wang.common.DatabaseUtil;
+import cn.wang.map.utils.CRSConvertor;
 
 public class Client {
 

@@ -1,4 +1,4 @@
-package org.wang.client;
+package cn.wang.client;
 
 public class HibernateClient {
 
