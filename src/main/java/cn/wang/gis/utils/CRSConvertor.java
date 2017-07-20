@@ -1,4 +1,4 @@
-package cn.wang.map.utils;
+package cn.wang.gis.utils;
 
 import org.osgeo.proj4j.BasicCoordinateTransform;
 import org.osgeo.proj4j.CRSFactory;

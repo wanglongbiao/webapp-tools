@@ -1,10 +1,10 @@
-package cn.wang.map;
+package cn.wang.gis;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import cn.wang.common.DatabaseUtil;
-import cn.wang.map.utils.CRSConvertor;
+import cn.wang.gis.utils.CRSConvertor;
 
 public class Client {
 
