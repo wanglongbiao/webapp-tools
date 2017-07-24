@@ -125,6 +125,22 @@
 			<version>2.2.1-b03</version>
 			<scope>provided</scope>
 		</dependency>
+		
+<!-- 		<dependency>
+            <groupId>org.opengis</groupId>
+            <artifactId>geoapi</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.geotoolkit</groupId>
+            <artifactId>geotk-referencing</artifactId>
+            <version>3.20-geoapi-3.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.geotoolkit</groupId>
+            <artifactId>geotk-epsg</artifactId>
+            <version>3.20-geoapi-3.0</version>
+        </dependency> -->
 	</dependencies>
 	<build>
 		<finalName>test-role</finalName>

@@ -5,6 +5,14 @@ import org.osgeo.proj4j.CRSFactory;
 import org.osgeo.proj4j.CoordinateReferenceSystem;
 import org.osgeo.proj4j.ProjCoordinate;
 
+import cn.wang.gis.GeographicCRS;
+
+/**
+ * 坐标转换
+ * 
+ * @author w
+ *
+ */
 public class CRSConvertor {
 
     public static void main(String[] args) {
@@ -18,9 +26,11 @@ public class CRSConvertor {
 
     private static CRSFactory crsFactory = new CRSFactory();
 
-    private static CoordinateReferenceSystem srcCRS = crsFactory.createFromName("EPSG:3395");
-    private static CoordinateReferenceSystem tgtCRS = crsFactory.createFromName("EPSG:3857");
-    private static BasicCoordinateTransform t = new BasicCoordinateTransform(srcCRS, tgtCRS);
+    private static CoordinateReferenceSystem srcCRS = crsFactory.createFromName(GeographicCRS.WGS84_WEB_MERCATOR);
+    private static CoordinateReferenceSystem tgtCRS = crsFactory.createFromName(GeographicCRS.WGS84);
+    // private static CoordinateReferenceSystem tgtCRS =
+    // crsFactory.createFromName(GeographicCRS.WGS84_WEB_MERCATOR);
+    private static BasicCoordinateTransform transform = new BasicCoordinateTransform(srcCRS, tgtCRS);
 
     public static double[] transform(double x, double y) {
         try {
@@ -30,7 +40,7 @@ public class CRSConvertor {
             // Point.Double gps = new Double(x, y);
 
             ProjCoordinate tCoor = new ProjCoordinate();
-            t.transform(new ProjCoordinate(x, y), tCoor);
+            transform.transform(new ProjCoordinate(x, y), tCoor);
 
             return new double[] { tCoor.x, tCoor.y };
             // Point.Double targetPoint = new Point.Double(tCoor.x, tCoor.y);
