@@ -33,7 +33,7 @@ def start():
               '-DgroupId=' + group_id + ' -DartifactId=' + artifact_id
 
     os.system(command)
-    os.makedirs('./' + artifact_id + '/src/main/java')
+    os.makedirs('./' + artifact_id + '/src/main/java/%s' % group_id.replace('.', '/'))
     os.makedirs('./' + artifact_id + '/src/test/java')
 
     et.register_namespace('', 'http://maven.apache.org/POM/4.0.0')
