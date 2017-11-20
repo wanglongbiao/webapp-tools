@@ -15,6 +15,10 @@ import re
 def start():
     default_path = 'D:\\eclipse_workspace\\'
     print("\n######## default path:%s ########\n" % default_path)
+
+    if not os.path.exists(default_path):
+        print("%s does not existed, creating..." % default_path)
+        os.mkdir(default_path)
     default_group_id = 'me.wang'
     default_artifact_id = 'test-webapp1'
 
@@ -65,6 +69,7 @@ def copy_files(artifact_id, group_id):
     shutil.copy('./resources/web.xml', './' + artifact_id + '/src/main/webapp/WEB-INF')
 
 
+# 将生成的项目目录剪切到指定的目录中去
 def move_project(artifact_id, default_path):
     shutil.move('./' + artifact_id, default_path)
     new_path = default_path + artifact_id
@@ -72,11 +77,13 @@ def move_project(artifact_id, default_path):
     os.system("explorer.exe %s" % new_path)
 
 
+# 获取 xml 文件的命名空间
 def get_namespace(element):
     m = re.match('{.*\}', element.tag)
     return m.group(0) if m else ''
 
 
+# 修改 pom.xml
 def modify_pom(doc, ele_name, ele_val):
     # et.register_namespace('', 'http://maven.apache.org/POM/4.0.0')
     # doc = et.parse('./resources/pom.xml')
@@ -97,6 +104,7 @@ def modify_pom(doc, ele_name, ele_val):
     # print('ai_ele:' + str(ai_ele))
 
 
+# 主程序
 if __name__ == "__main__":
     # start()
     # test_modify_xml()
