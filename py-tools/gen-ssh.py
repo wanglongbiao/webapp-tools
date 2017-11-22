@@ -66,7 +66,9 @@ def copy_files(artifact_id, group_id):
     modify_pom(pom_doc, 'name', artifact_id + ' Maven Webapp')
     modify_pom(pom_doc, 'finalName', artifact_id)
     pom_doc.write('./%s/pom.xml' % artifact_id)
-    shutil.copy('./resources/web.xml', './' + artifact_id + '/src/main/webapp/WEB-INF')
+    shutil.copy('./resources/web.xml', './' + artifact_id + '/src/main/webapp/WEB-INF/')
+    shutil.copy('./resources/log4j.properties', './' + artifact_id + '/src/main/java/resources/')
+    shutil.copy('./resources/jdbc.properties', './' + artifact_id + '/src/main/java/resources/')
 
 
 # 将生成的项目目录剪切到指定的目录中去
@@ -120,7 +122,7 @@ if __name__ == "__main__":
     # print(default_path)
 
     # cwd = os.getcwd()
-    # print(cwd)
+    # print("cwd:" + cwd)
     # os.system("explorer.exe %s" % cwd)
     start()
     input("########## end ##########")
