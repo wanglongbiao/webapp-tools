@@ -6,11 +6,6 @@ import shutil
 import xml.etree.ElementTree as et
 import re
 
-
-# import win32clipboard
-# from Tkinter import Tk
-# import Pyperclip
-
 # 程序的开始，面向过程设计
 def start():
     default_path = 'D:\\eclipse_workspace\\'
