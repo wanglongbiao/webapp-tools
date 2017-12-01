@@ -1,0 +1,79 @@
+@charset "UTF-8";
+
+/*主页面布局*/
+
+.header {
+    background-color: black;
+    color: white;
+    text-align: center;
+    /*color:dodgerblue;*/
+    background-color: dodgerblue;
+    padding: 1px;
+}
+
+#center {
+    position: absolute;
+    width: 100%;
+    top: 100px;
+    bottom: 0px;
+}
+
+#left {
+    width: 20%;
+    height: 100%;
+    /*line-height: 30px;*/
+    background-color: #eeeeee;
+    float: left;
+    padding: 5px;
+    /*position: absolute;*/
+    border: 1px solid grey;
+    /*width:inherit;*/
+    /*width: 75%;*/
+
+}
+
+#right {
+    width: 80%;
+    height: 100%;
+    float: right;
+    /*padding: 10px;*/
+}
+
+footer {
+    background-color: black;
+    color: white;
+    clear: both;
+    text-align: center;
+    padding: 5px;
+}
+
+.h-100 {
+    height: 100px;
+}
+
+/*左侧树样式*/
+#addrTree {
+    width: 260px;
+    height: 100%;
+
+    /*overflow: scroll;*/
+    overflow: auto;
+}
+
+/*海图样式*/
+#viewDiv {
+    height: 100%;
+    /*position: absolute;*/
+    /*width:inherit;*/
+    /*width: 75%;*/
+    /*top: 100px;*/
+    /*bottom: 0px;*/
+    background-color: gray;
+    border: 1px solid black;
+    /*padding: 5px;*/
+    /*margin: 0px 0px;*/
+}
+
+.esri-attribution__powered-by, .esriControlsBR, #viewDiv_zoom_slider {
+    display: none;
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<decorators defaultdir="/WEB-INF/layouts/">
+    <!-- 此处用来定义不需要过滤的页面 -->
+    <excludes>
+        <pattern>/index.jsp</pattern>
+        <pattern>/login.jsp</pattern>
+        <pattern>/static/*</pattern>
+        <pattern>/webjars/*</pattern>
+        <pattern>/ship/shipView.do</pattern>
+        <!-- <pattern>**/colorbox*</pattern> -->
+    </excludes>
+
+    <!-- 用来定义装饰器要过滤的页面 弹窗 -->
+    <decorator name="colorbox-theme" page="colorbox-theme.jsp">
+        <pattern>**/colorbox*</pattern>
+    </decorator>
+    <!-- 用来定义装饰器要过滤的页面 -->
+    <decorator name="basic-theme" page="basic-theme.jsp">
+        <pattern>/*</pattern>
+    </decorator>
+</decorators>
