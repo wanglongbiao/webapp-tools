@@ -30,11 +30,11 @@ def start():
         artifact_id = default_artifact_id
         # print('your artifact_id:' + artifact_id)
 
-    group_id = input("groupId [%s]: " % default_group_id)
+    # group_id = input("groupId [%s]: " % default_group_id)
     # print('your group_id:' + group_id)
-    if group_id == '':
-        group_id = default_group_id
-        # print('using your default group_id:' + group_id)
+    # if group_id == '':
+    group_id = default_group_id
+    # print('using your default group_id:' + group_id)
 
     command = 'mvn archetype:generate -DinteractiveMode=false -DarchetypeArtifactId=maven-archetype-webapp  ' \
               '-DgroupId=' + group_id + ' -DartifactId=' + artifact_id
@@ -42,6 +42,8 @@ def start():
     os.system(command)
 
     create_directories(artifact_id, group_id)
+
+    update_pom(artifact_id, group_id)
 
     copy_files(artifact_id, group_id)
 
@@ -51,9 +53,18 @@ def start():
 
 # 创建默认的文件夹
 def create_directories(artifact_id, group_id):
-    default_package = './' + artifact_id + '/src/main/java/%s' % group_id.replace('.', '/')
-    print("default_package:%s" % default_package)
+    web_prefix = './' + artifact_id + '/src/main/webapp/'
 
+    default_package = './' + artifact_id + '/src/main/java/%s' % group_id.replace('.', '/')
+    # print("default_package:%s" % default_package)
+
+    os.makedirs(web_prefix + 'common/')
+    os.makedirs(web_prefix + 'static/')
+    os.makedirs(web_prefix + 'static/js/')
+    os.makedirs(web_prefix + 'static/css/')
+    os.makedirs(web_prefix + 'static/img/')
+    os.makedirs(web_prefix + 'WEB-INF/layouts/')
+    os.makedirs(web_prefix + 'WEB-INF/views/')
     os.makedirs(default_package + '/entity')
     os.makedirs(default_package + '/service')
     os.makedirs(default_package + '/repository')
@@ -61,18 +72,28 @@ def create_directories(artifact_id, group_id):
     os.makedirs('./' + artifact_id + '/src/test/java')
 
 
-# 复制资源文件到项目中
-def copy_files(artifact_id, group_id):
+# 修改 pom.xml
+def update_pom(artifact_id, group_id):
     et.register_namespace('', 'http://maven.apache.org/POM/4.0.0')
-    pom_doc = et.parse('./resources/pom.xml')
+    pom_doc = et.parse('./template/pom.xml')
     modify_pom(pom_doc, 'artifactId', artifact_id)
     modify_pom(pom_doc, 'groupId', group_id)
     modify_pom(pom_doc, 'name', artifact_id + ' Maven Webapp')
     modify_pom(pom_doc, 'finalName', artifact_id)
     pom_doc.write('./%s/pom.xml' % artifact_id)
-    shutil.copy('./resources/web.xml', './' + artifact_id + '/src/main/webapp/WEB-INF/')
-    shutil.copy('./resources/log4j.properties', './' + artifact_id + '/src/main/resources/')
-    shutil.copy('./resources/jdbc.properties', './' + artifact_id + '/src/main/resources/')
+
+
+# 复制资源文件到项目中
+def copy_files(artifact_id, group_id):
+    shutil.copy('./template/web.xml', './' + artifact_id + '/src/main/webapp/WEB-INF/')
+    shutil.copy('./template/jsp/taglibs.jsp', './' + artifact_id + '/src/main/webapp/common/')
+
+    shutil.copy('./template/resources/log4j.properties', './' + artifact_id + '/src/main/resources/')
+    shutil.copy('./template/resources/jdbc.properties', './' + artifact_id + '/src/main/resources/')
+    shutil.copy('./template/resources/dispatcher-servlet.xml', './' + artifact_id + '/src/main/resources/')
+    shutil.copy('./template/resources/spring-context.xml', './' + artifact_id + '/src/main/resources/')
+    shutil.copy('./template/resources/spring-dao.xml', './' + artifact_id + '/src/main/resources/')
+    # shutil.copy('./resources/', './' + artifact_id + '/src/main/resources/')
 
 
 # 将生成的项目目录剪切到指定的目录中去
@@ -113,6 +134,7 @@ def modify_pom(doc, ele_name, ele_val):
 # 复制文本到剪切板
 def add_to_clip(text):
     command = 'echo ' + text.strip() + '| clip'
+    print(command)
     os.system(command)
 
 
@@ -135,4 +157,5 @@ if __name__ == "__main__":
     # print("cwd:" + cwd)
     # os.system("explorer.exe %s" % cwd)
     start()
+    # add_to_clip("hello")
     input("########## end ##########")
