@@ -46,6 +46,7 @@ def start():
     copy_files(artifact_id, group_id)
 
     move_project(artifact_id, dest_project_path)
+    add_to_clip(dest_project_path + artifact_id)
 
 
 # 创建默认的文件夹
@@ -70,8 +71,8 @@ def copy_files(artifact_id, group_id):
     modify_pom(pom_doc, 'finalName', artifact_id)
     pom_doc.write('./%s/pom.xml' % artifact_id)
     shutil.copy('./resources/web.xml', './' + artifact_id + '/src/main/webapp/WEB-INF/')
-    shutil.copy('./resources/log4j.properties', './' + artifact_id + '/src/main/java/resources/')
-    shutil.copy('./resources/jdbc.properties', './' + artifact_id + '/src/main/java/resources/')
+    shutil.copy('./resources/log4j.properties', './' + artifact_id + '/src/main/resources/')
+    shutil.copy('./resources/jdbc.properties', './' + artifact_id + '/src/main/resources/')
 
 
 # 将生成的项目目录剪切到指定的目录中去
@@ -107,6 +108,12 @@ def modify_pom(doc, ele_name, ele_val):
     # root.remove(ai_ele)
     # ai_ele.text = 'test1'
     # print('ai_ele:' + str(ai_ele))
+
+
+# 复制文本到剪切板
+def add_to_clip(text):
+    command = 'echo ' + text.strip() + '| clip'
+    os.system(command)
 
 
 # 主程序
