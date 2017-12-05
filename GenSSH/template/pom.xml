@@ -2,7 +2,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>me.wang</groupId>
-    <artifactId>t1</artifactId>
+    <artifactId>test2</artifactId>
     <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
     <name>t1 Maven Webapp</name>
@@ -11,6 +11,7 @@
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+        <jetty.version>9.4.7.v20170914</jetty.version>
         <spring.version>4.3.7.RELEASE</spring.version>
         <mybatis.version>3.2.6</mybatis.version>
         <c3p0.version>0.9.1.2</c3p0.version>
@@ -252,6 +253,18 @@
         </dependency>
     </dependencies>
     <build>
-        <finalName>t1</finalName>
+        <finalName>jetty</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.1</version>
+                <configuration>
+                    <path>/</path>
+                    <uriEncoding>UTF-8</uriEncoding>
+                    <server>tomcat7</server>
+                </configuration>
+            </plugin>
+        </plugins>
     </build>
 </project>
