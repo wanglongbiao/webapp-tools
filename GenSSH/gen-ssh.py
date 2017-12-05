@@ -6,16 +6,18 @@ import shutil
 import xml.etree.ElementTree as et
 import re
 
-# 程序的开始，面向过程设计
-def start():
-    default_path = 'D:\\eclipse_workspace\\'
-    print("\n######## default path:%s ########\n" % default_path)
 
-    if not os.path.exists(default_path):
-        print("%s does not existed, creating..." % default_path)
-        os.mkdir(default_path)
+# 程序的开始，面向过程的程序设计
+def start():
+    dest_project_path = 'D:\\eclipse-workspace\\'
     default_group_id = 'me.wang'
     default_artifact_id = 'test-webapp1'
+
+    print("\n######## dest_project_path:%s ########\n" % dest_project_path)
+
+    if not os.path.exists(dest_project_path):
+        print("%s does not existed, creating..." % dest_project_path)
+        os.mkdir(dest_project_path)
 
     artifact_id = input("artifactId [%s]:" % default_artifact_id)
     if artifact_id == '':
@@ -37,7 +39,7 @@ def start():
 
     copy_files(artifact_id, group_id)
 
-    move_project(artifact_id, default_path)
+    move_project(artifact_id, dest_project_path)
 
 
 # 创建默认的文件夹
