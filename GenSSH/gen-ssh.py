@@ -7,6 +7,12 @@ import xml.etree.ElementTree as et
 import re
 
 
+# 程序的开始，面向过程设计
+def start():
+    default_path = 'D:\\eclipse-workspace\\'
+    print("\n######## default path:%s ########\n" % default_path)
+
+
 # 程序的开始，面向过程的程序设计
 def start():
     dest_project_path = 'D:\\eclipse-workspace\\'
