@@ -7,15 +7,9 @@ import xml.etree.ElementTree as et
 import re
 
 
-# 程序的开始，面向过程设计
-def start():
-    default_path = 'D:\\eclipse-workspace\\'
-    print("\n######## default path:%s ########\n" % default_path)
-
-
 # 程序的开始，面向过程的程序设计
 def start():
-    dest_project_path = 'D:\\eclipse-workspace\\'
+    dest_project_path = 'D:\\_wang_work\\_code\\'
     default_group_id = 'me.wang'
     default_artifact_id = 'test-webapp1'
 
@@ -30,11 +24,11 @@ def start():
         artifact_id = default_artifact_id
         # print('your artifact_id:' + artifact_id)
 
-    # group_id = input("groupId [%s]: " % default_group_id)
-    # print('your group_id:' + group_id)
-    # if group_id == '':
-    group_id = default_group_id
-    # print('using your default group_id:' + group_id)
+    group_id = input("groupId [%s]: " % default_group_id)
+    print('your group_id:' + group_id)
+    if group_id == '':
+        group_id = default_group_id
+        print('using your default group_id:' + group_id)
 
     command = 'mvn archetype:generate -DinteractiveMode=false -DarchetypeArtifactId=maven-archetype-webapp  ' \
               '-DgroupId=' + group_id + ' -DartifactId=' + artifact_id
@@ -92,7 +86,7 @@ def copy_files(artifact_id, group_id):
     shutil.copy('./template/resources/jdbc.properties', './' + artifact_id + '/src/main/resources/')
     shutil.copy('./template/resources/dispatcher-servlet.xml', './' + artifact_id + '/src/main/resources/')
     shutil.copy('./template/resources/spring-context.xml', './' + artifact_id + '/src/main/resources/')
-    shutil.copy('./template/resources/spring-dao.xml', './' + artifact_id + '/src/main/resources/')
+    shutil.copy('./template/resources/spring-dao.xml', './' + artifact_id + '/src/main/resources/unused-spring-dao.xml')
     # shutil.copy('./resources/', './' + artifact_id + '/src/main/resources/')
 
 
@@ -138,24 +132,26 @@ def add_to_clip(text):
     os.system(command)
 
 
+def test_modify_bean():
+    print("start")
+    et.register_namespace('', 'http://www.springframework.org/schema/beans')
+    doc = et.parse('./template/resources/spring-context.xml')
+    root = doc.getroot()
+
+    namespace = get_namespace(root)
+    # print('namespace:' + namespace)
+    # ai_ele = root.find("artifactId", 'http://maven.apache.org/POM/4.0.0')
+    # ai_ele = root.find("artifactId", namespace)
+    # print('ok:' + '//{0}groupId'.format(namespace))
+    old_element = doc.find(('.//{0}' + ele_name).format(namespace))
+    # old_element = doc.find(('{0}build/{0}finalName' + ele_name).format(namespace))
+    # ai_ele = doc.findall("project/artifactId")
+    old_element.text = ele_val
+    # modify_pom(pom_doc, 'artifactId', artifact_id)
+
 # 主程序
 if __name__ == "__main__":
-    # start()
-    # test_modify_xml()
-    # start()
-    # et.register_namespace('', 'http://maven.apache.org/POM/4.0.0')
-    # doc = et.parse('./resources/pom.xml')
-    # modify_pom(doc, 'build/finalName', 'xxxxxxx2x')
-    # test2()
-    # ss = 'default str'
-    # print('default..%s' % ss)
-    # test1()
-    # default_path = 'D:\eclipse_workspace\\'
-    # print(default_path)
-
-    # cwd = os.getcwd()
-    # print("cwd:" + cwd)
-    # os.system("explorer.exe %s" % cwd)
     start()
-    # add_to_clip("hello")
+    #test_modify_bean()
     input("########## end ##########")
+
