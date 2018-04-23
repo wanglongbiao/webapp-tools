@@ -28,16 +28,8 @@ sudo apt-get install -y shadowsocks
 echo "start shadowsocks..."
 sudo sslocal -c /etc/shadowsocks.json -d start
 
-echo "add shadowsocks to startup..."
-#echo "sudo sslocal -c /etc/shadowsocks.json -d start" >> ~/.rc.local
-
 echo "install mp3,mp4..."
 sudo apt install ubuntu-restricted-extras
-
-#echo "add shadowsocks to startup..."
-#sudo echo "sudo sslocal -c /etc/shadowsocks.json -d start
-# >> /etc/init.d/rc.local 
-
 
 echo "install maven..."
 sudo apt install -y maven
@@ -49,11 +41,6 @@ sudo mkdir /usr/local/java/
 echo "config vim..."
 echo "set nu" >> ~/.vimrc
 echo "set autointend" >> ~/.vimrc
-
-echo "install upstart..."
-sudo apt install upstart
-
-
 
 echo "add shadowsocks to startup"
 sudo touch /etc/rc.local
