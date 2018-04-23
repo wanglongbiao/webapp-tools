@@ -29,6 +29,6 @@
         <table tableName="T_TARGET_BASE" domainObjectName="TargetBase"/>
         <table tableName="T_TARGET_SNAPSHOOT" domainObjectName="TargetSnapshoot"/>
         <table tableName="T_ZONE" domainObjectName="Zone"/>
-        <table tableName="T_DATA_DICT" domainObjectName="AisInfo"/>
+        <table tableName="T_DATA_DICT" domainObjectName="DataDict"/>
     </context>
 </generatorConfiguration>
