@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <properties resource="jdbc.properties"/>
+    <classPathEntry location="C:\Users\w\.m2\repository\com\microsoft\sqlserver\sqljdbc4\4.0\sqljdbc4-4.0.jar"/>
+    <context id="context1" targetRuntime="MyBatis3">
+        <commentGenerator>
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+        <jdbcConnection driverClass="${driver}" connectionURL="${url}" userId="${username}" password="${password}"></jdbcConnection>
+        <javaTypeResolver type="org.mybatis.generator.internal.types.JavaTypeResolverDefaultImpl">
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+        <javaModelGenerator targetPackage="${package}.entity" targetProject="MAVEN">
+            <property name="enableSubPackages" value="false"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+        <sqlMapGenerator targetPackage="${package}.dao" targetProject="MAVEN">
+            <property name="enableSubPackages" value="false"/>
+        </sqlMapGenerator>
+        <javaClientGenerator type="XMLMAPPER" targetPackage="${package}.dao" targetProject="MAVEN">
+            <property name="enableSubPackages" value="false"/>
+        </javaClientGenerator>
+        <table tableName="T_AIS_INFO" domainObjectName="AisInfo"/>
+        <table tableName="T_BDS_INFO" domainObjectName="BdsInfo"/>
+        <table tableName="T_EVENT" domainObjectName="Event"/>
+        <table tableName="T_MARK" domainObjectName="Mark"/>
+        <table tableName="T_TARGET_BASE" domainObjectName="TargetBase"/>
+        <table tableName="T_TARGET_SNAPSHOOT" domainObjectName="TargetSnapshoot"/>
+        <table tableName="T_ZONE" domainObjectName="Zone"/>
+        <table tableName="T_DATA_DICT" domainObjectName="AisInfo"/>
+    </context>
+</generatorConfiguration>
