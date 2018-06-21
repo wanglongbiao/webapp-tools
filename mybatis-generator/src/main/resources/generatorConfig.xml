@@ -16,6 +16,7 @@
         <javaModelGenerator targetPackage="${package}.entity" targetProject="MAVEN">
             <property name="enableSubPackages" value="false"/>
             <property name="trimStrings" value="true"/>
+            <property name="" value="true"/>
         </javaModelGenerator>
         <sqlMapGenerator targetPackage="${mapperPackage}" targetProject="MAVEN">
             <property name="enableSubPackages" value="false"/>
