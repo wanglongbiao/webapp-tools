@@ -17,7 +17,7 @@
             <property name="enableSubPackages" value="false"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
-        <sqlMapGenerator targetPackage="${package}.dao" targetProject="MAVEN">
+        <sqlMapGenerator targetPackage="${mapperPackage}" targetProject="MAVEN">
             <property name="enableSubPackages" value="false"/>
         </sqlMapGenerator>
         <javaClientGenerator type="XMLMAPPER" targetPackage="${package}.dao" targetProject="MAVEN">
