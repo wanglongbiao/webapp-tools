@@ -23,6 +23,12 @@
         <javaClientGenerator type="XMLMAPPER" targetPackage="${package}.dao" targetProject="MAVEN">
             <property name="enableSubPackages" value="false"/>
         </javaClientGenerator>
+        <!--<table tableName="%" domainObjectName="BasicTarget" enableCountByExample="false"-->
+        <!--enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="dbid" sqlStatement="JDBC" identity="true"/>-->
+        <!--</table>-->
         <table tableName="T_BASIC_TARGET" domainObjectName="BasicTarget" enableCountByExample="false"
                enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
@@ -32,27 +38,45 @@
         <table tableName="T_AIS_TARGET" domainObjectName="AisTarget" enableCountByExample="false"
                enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
-               selectByExampleQueryId="false"/>
+               selectByExampleQueryId="false">
+            <generatedKey column="dbid" sqlStatement="JDBC" identity="true"/>
+        </table>
         <table tableName="T_BDS_TARGET" domainObjectName="BdsTarget" enableCountByExample="false"
                enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
-               selectByExampleQueryId="false"/>
+               selectByExampleQueryId="false">
+            <generatedKey column="dbid" sqlStatement="JDBC" identity="true"/>
+        </table>
         <table tableName="T_EVENT" domainObjectName="Event" enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
-               selectByExampleQueryId="false"/>
+               selectByExampleQueryId="false">
+            <generatedKey column="dbid" sqlStatement="JDBC" identity="true"/>
+        </table>
         <table tableName="T_RULE" domainObjectName="Rule" enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
-               selectByExampleQueryId="false"/>
+               selectByExampleQueryId="false">
+            <generatedKey column="dbid" sqlStatement="JDBC" identity="true"/>
+        </table>
         <table tableName="T_TARGET_SNAPSHOT" domainObjectName="TargetSnapshot" enableCountByExample="false"
                enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
-               selectByExampleQueryId="false"/>
+               selectByExampleQueryId="false">
+            <generatedKey column="dbid" sqlStatement="JDBC" identity="true"/>
+        </table>
         <table tableName="T_ZONE" domainObjectName="Zone" enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false"/>
         <table tableName="T_DATA_DICT" domainObjectName="DataDict" enableCountByExample="false"
                enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
-               selectByExampleQueryId="false"/>
+               selectByExampleQueryId="false">
+            <generatedKey column="dbid" sqlStatement="JDBC" identity="true"/>
+        </table>
+        <table tableName="T_FILTER_RULE" domainObjectName="FilterRule" enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false">
+            <generatedKey column="dbid" sqlStatement="JDBC" identity="true"/>
+        </table>
     </context>
 </generatorConfiguration>
