@@ -22,8 +22,8 @@
         <sqlMapGenerator targetPackage="${mapperPackage}" targetProject="MAVEN">
             <property name="enableSubPackages" value="false"/>
         </sqlMapGenerator>
-        <javaClientGenerator type="XMLMAPPER" targetPackage="${package}.dao" targetProject="src\main\java">
-            <property name="enableSubPackages" value="true"/>
+        <javaClientGenerator type="XMLMAPPER" targetPackage="${package}.dao" targetProject="MAVEN">
+            <property name="enableSubPackages" value="false"/>
         </javaClientGenerator>
         <table tableName="T\_%" enableCountByExample="false"
                enableUpdateByExample="false"
