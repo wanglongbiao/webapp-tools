@@ -9,7 +9,7 @@ import re
 
 # 程序的开始
 def start():
-    dest_project_path = r'D:\_wang_work\_code'
+    dest_project_path = 'D:\\_wang_work\\_code\\'
     default_group_id = 'me.wang'
     default_artifact_id = 'test-webapp1'
 
@@ -95,7 +95,7 @@ def move_project(artifact_id, default_path):
     shutil.move('./' + artifact_id, default_path)
     new_path = default_path + artifact_id
     print("new path:" + new_path)
-    os.system("explorer.exe %s" % new_path)
+    os.system("start %s" % new_path)
 
 
 # 获取 xml 文件的命名空间
@@ -149,9 +149,9 @@ def test_modify_bean():
     old_element.text = ele_val
     # modify_pom(pom_doc, 'artifactId', artifact_id)
 
+
 # 主程序
 if __name__ == "__main__":
     start()
-    #test_modify_bean()
+    # test_modify_bean()
     input("########## end ##########")
-

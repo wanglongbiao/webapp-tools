@@ -10,8 +10,9 @@
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <spring.version>4.3.7.RELEASE</spring.version>
+        <spring.version>5.0.8.RELEASE</spring.version>
         <spring-jpa.version>1.11.9.RELEASE</spring-jpa.version>
         <mybatis.version>3.2.6</mybatis.version>
         <druid.version>1.0.20</druid.version>
