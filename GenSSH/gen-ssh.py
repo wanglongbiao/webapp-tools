@@ -7,9 +7,9 @@ import xml.etree.ElementTree as et
 import re
 
 
-# 程序的开始，面向过程的程序设计
+# 程序的开始
 def start():
-    dest_project_path = 'D:\\_wang_work\\_code\\'
+    dest_project_path = r'D:\_wang_work\_code'
     default_group_id = 'me.wang'
     default_artifact_id = 'test-webapp1'
 
@@ -17,7 +17,7 @@ def start():
 
     if not os.path.exists(dest_project_path):
         print("%s does not existed, creating..." % dest_project_path)
-        os.mkdir(dest_project_path)
+        os.makedirs(dest_project_path)
 
     artifact_id = input("artifactId [%s]:" % default_artifact_id)
     if artifact_id == '':
