@@ -3,8 +3,6 @@
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 <generatorConfiguration>
     <properties resource="jdbc.properties"/>
-    <classPathEntry location="C:\Users\w\.m2\repository\com\microsoft\sqlserver\sqljdbc4\4.0\sqljdbc4-4.0.jar"/>
-    <classPathEntry location="D:\_wang_work\_code\MyGithub\ProjectTools\mybatis-generator"/>
     <context id="context1" targetRuntime="MyBatis3">
         <commentGenerator>
             <property name="suppressAllComments" value="true"/>
@@ -30,7 +28,7 @@
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false">
             <generatedKey column="dbid" sqlStatement="JDBC" identity="true"/>
-            <domainObjectRenamingRule searchString="^T" replaceString="" />
+            <domainObjectRenamingRule searchString="^T" replaceString=""/>
         </table>
     </context>
 </generatorConfiguration>
