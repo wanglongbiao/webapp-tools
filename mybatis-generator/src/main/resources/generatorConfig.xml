@@ -5,7 +5,7 @@
     <properties resource="jdbc.properties"/>
     <classPathEntry
             location="D:\_wang_work\_code\maven_repo\com\microsoft\sqlserver\mssql-jdbc\6.1.0.jre8\mssql-jdbc-6.1.0.jre8.jar"/>
-    <classPathEntry location="D:\_wang_work\_code\MyGithub\ProjectTools\mybatis-generator"/>
+    <!--<classPathEntry location="D:\_wang_work\_code\MyGithub\ProjectTools\mybatis-generator"/>-->
     <context id="context1" targetRuntime="MyBatis3">
         <commentGenerator>
             <property name="suppressAllComments" value="true"/>
